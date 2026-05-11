@@ -1,0 +1,32 @@
+Question to answer:
+1. What data exists?
+2. How does data flow?
+3. What responsibilities does each component have?
+4. Which database owns what?
+5. What analyses will the system support?
+
+
+The map
+                ┌─────────────────┐
+                │ Sensor Simulator│
+                │   (Publisher)   │
+                └────────┬────────┘
+                         │
+                  MQTT Publish
+                         │
+                 ┌───────▼────────┐
+                 │ Mosquitto Broker│
+                 └───────┬────────┘
+                         │
+                  MQTT Subscribe
+                         │
+                ┌────────▼────────┐
+                │ Data Processor  │
+                │   (Subscriber)  │
+                └───┬────┬────┬───┘
+                    │    │    │
+                    ▼    ▼    ▼
+                 MySQL Mongo Neo4j
+                    │
+                    ▼
+             Analysis Application
