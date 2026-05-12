@@ -30,3 +30,285 @@ The map
                     │
                     ▼
              Analysis Application
+
+COMPONENTS:
+Component	                                     Purpose
+
+Sensor Simulator	                             Generates fake environmental data
+MQTT Broker	                                     Transfers messages
+Subscriber Engine	                             Receives + processes messages
+MySQL Layer	                                     Structured analytics
+MongoDB Layer	                                 Raw JSON history
+Neo4j Layer	                                     Relationship intelligence
+Analysis Engine	                                 Unified insights
+
+
+
+Project Structure:
+
+environment-monitoring/
+
+├── publisher/
+│   └── sensor_simulator.py
+│
+├── subscriber/
+│   ├── mqtt_subscriber.py
+│   ├── mysql_handler.py
+│   ├── mongodb_handler.py
+│   └── neo4j_handler.py
+│
+├── analytics/
+│   ├── analytics_engine.py
+│   └── reports.py
+│
+├── config/
+│   └── settings.py
+│
+├── database/
+│   ├── mysql_schema.sql
+│   └── sample_queries.sql
+│
+├── requirements.txt
+│
+└── README.md
+
+
+
+SYSTEM DOMAIN DESIGN
+
+- Building Structure:
+         - Location table (location id, name of the room, and type of the room)
+         - Sensor table (sensor id, type of sensor, and location of the sensor)
+- MQTT Topic Design:
+         - building/{location}/{sensort_ype}
+- Sensor Event Structure:
+         - {
+         "sensor_id": " ",
+         "sensor_type": " ",
+         "location": " ",
+         "value":  ,
+         "unit": " ",
+         "timestamp": " "
+         }
+
+- Database Designs:
+          - MySQL
+                 - On app.diagrams.net
+          - MongoDB
+                 - Collection -> sensor_events
+                 - We can additional info like MQTT_topic, battery
+          - Neo4j
+                 - (Sensor)-[:LOCATED_IN]->(Room)
+                 - (Room)-[:CONNECTED_TO]->(Room)
+                 - (Sensor)-[:MEASURES]->(Metric)
+
+
+Questions we might ask of the system:
+- Which rooms are overhearing near the server room?
+- Which sensors belong to connected rooms?
+- Which areas are at ris*?
+
+
+ANALYTICS ENGINE
+
+Analysis 1 to 5:
+         - Latest sensor readings
+         - Average temprature per room
+         - Sensor network visualization
+         - Environmental ris* alerts
+         - Raw packet history (for debugging, replay, anomaly detection, and etc)
+
+
+
+
+NEXT DESIGN PHASE
+
+Next we should design:
+
+1. Exact MySQL schema
+2. Exact Neo4j graph model
+3. MQTT message lifecycle
+4. Folder structure
+5. Configuration management
+6. Failure handling
+7. Alert logic
+8. Sensor simulation realism
+
+
+Event schema:
+JSON
+{
+  "sensor_id": "S1",
+  "sensor_type": "temperature",
+  "location": "Lab A",
+  "value": 29.4,
+  "unit": "C",
+  "timestamp": "2026-05-12T15:30:00"
+}
+
+
+Sensor Simulation Strategy:
+- Controlled Random walk (random but realistic fluctuation)
+
+
+Alert Model:
+                   Normal      warnin*        Dange*
+- Temprature       < 30        30 - 35         > 35
+- Humidity         < 70                        > 70
+- Air quality      < 50        50 - 80         > 80
+
+
+Database write strategy:
+
+- Document everything initially that is being published then optimize later
+
+
+
+Terminal analytics menu (1st version):
+
+===== Environmental Monitoring System =====
+
+1. View Latest Readings
+2. Average Temperature Per Room
+3. View Sensor Relationships
+4. Environmental Alerts
+5. Raw Packet History
+6. Exit
+
+
+
+MySQL model:
+- https://app.diagrams.net/#G1FZX5be4PtP2OkL3iiHNOOJq-BKOhfEHl#%7B%22pageId%22%3A%222gN6s9wcJpLw68CYCRrr%22%7D
+
+MongoDB model:
+- {
+    "sensor_id": "S1",
+    "sensor_type": "temperature",
+    "location": {
+        "name": "Lab A",
+        "type": "Laboratory"
+    },
+    "value": 28.4,
+    "unit": "C",
+    "timestamp": "2026-05-12T15:00:00",
+    "mqtt_topic": "building/labA/temperature"
+  }
+
+Neo4j graph design:
+- Nodes:
+       - Room
+       - Sensor
+       - Metric
+- Relationships:
+       - LOCATED_IN (sensor belongs to a room)
+       - CONNECTED_TO (room adjacency)
+       - MEASURES (sensor measures metric)
+
+
+
+MQTT Event Lifecycle
+
+Sensor Simulator
+      ↓
+ MQTT Publish
+      ↓
+ Mosquitto Broker
+      ↓
+ Subscriber Engine
+      ↓
+ Validation Layer
+      ↓
+ Processing Layer
+      ↓
+ Database Routing
+      ↓
+ Alert Engine
+      ↓
+ Analytics System
+
+
+
+ Sensor generation:
+ - All sensors generate events asynchronously
+
+ MQTT publishing:
+ - Only know about broker's address and topic
+
+ Broker distribution:
+ - Doesn't underatand data, know meaning, nor store data permanently
+
+ Subscriber ingerstion:
+ - Writes directly to database -> MQTT CALLBACK (in the future we might create enqueue before wirting the sensor data directly to the database)
+
+Validation layer:
+- Ensuring this exist in the incoming message:
+               - sensor_id
+               - value
+               - timestamp
+- Value range checks:
+               - Temperature: -20 to 80
+               - Humidity: 0% to 100%
+               - AQI: 0 to 500
+
+- And any invalid messages will be logged
+
+Processing layer:
+- After validation, the data becomes trusted
+- Store in:
+       - MySQL (structured analytics storage)
+       - MongoDB (raw event)
+       - Neo4j (relationship intelligence, mostly dormant only during initialization)
+- At system startup:
+       - initialize rooms
+       - initialize sensors
+       - initialize graph relationship, after that Neo4j ramains mostly stable
+
+Alert engine:
+- After storing event, evaluate ris*
+
+Analytics access:
+- Querying + insight generation
+
+
+
+Important Architectural Principle
+
+Write path and Read path:
+
+Write path:
+- Sensors -> MQTT -> subscriber -> databases
+- Ingestion, persistence, and validation
+Read path
+- Analytics engine -> databases -> reports
+- Querying, aggregation, and intelligence
+
+
+SYSTEM INITIALIZATION
+1. Connect MySQL
+2. Connect MongoDB
+3. Connect Neo4j
+4. Initialize graph
+5. Start MQTT subscriber
+6. Start sensor simulator
+
+
+System startup sequence
+- Order matters because:
+                 - Subscriber can not store data before DBs initializes
+                 - Sensor should not publish before subscriber is ready
+                 - Graph relationships should exist before analytics run
+
+1. Load configuration
+2. Connect databases
+3. Initialize MySQL tables
+4. Initialize Neo4j graph
+5. Start MQTT subscriber
+6. Start sensor simulators
+7. Begin analytics operations
+
+
+
+
+
+
+

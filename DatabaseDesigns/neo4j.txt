@@ -1,0 +1,13 @@
+Neo4j IS FOR MANAGING CONTEXT AND RELATIONSHIPS
+
+
+GRAPH DESIGN:
+
+- Nodes:
+       - Room
+       - Sensor
+       - Metric
+- Relationships:
+       - LOCATED_IN (sensor belongs to a room)
+       - CONNECTED_TO (room adjacency)
+       - MEASURES (sensor measures metric)

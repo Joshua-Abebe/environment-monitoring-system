@@ -1,0 +1,102 @@
+Design Choices
+
+Date 05/11/2026
+
+- I chose to build a simple-realistic multi-room monitoring system, because it will allow me:
+               - To learn:
+                           - Event-driven systems
+                           - Data orchestration across different database systems according to their strengths
+               - To finish project on time while not compromising learning objectives
+
+- I chose these five analysis for a start for the system to perform:
+               - Latest sensor readings
+               - Average temprature per room
+               - Sensor network visualization
+               - Environmental ris* alerts
+               - Raw packet history (for debugging, replay, anomaly detection, and etc)
+
+- Why I chose MQTT as the communication protocol aside from my Professor recommendation is because:
+               - It is a light weight protocol
+               - It is open source
+               - It is easy to implement
+               - It is easy to scale
+               -
+
+- I chose these three database for the following reasons according to my project:
+               - MySQL
+                      - Very useful in statistical analysis
+                      - Very fast and reliable in math queries
+               - MongoDB
+                      - For flexibility (if the sensors add other metrics and information, this database don't need any additional alteration to implement the change)
+                      - For historical data
+                      - To get the raw data from the sensors
+               - Neo4j
+                      - Unmatched in relationship's traversal and query performance
+                      - For visualizaiton (specifically to visualize sensor network)
+
+- I chose Python as the programming language, because:
+               - It intergrates well with the database
+               - It is easier to simulate the sensor's data
+               - It is easy to integrate with MQTT according to online searches
+               - It doesn't have too much boilerplate code
+               - It is easy to implement
+
+
+
+
+
+Date 05/12/2026
+
+- This is my MQTT topic design, simple and descriptive enough to show the hierchacy of environment monitoring system:
+               - building/ {Location} / {Sensor_type}
+
+- I chose to have only one MQTT subscriber to manage all three databases as opposed to having different subscribers for each databases to reduce the complexity
+               - MQTT Subscriber
+                     ├── MySQL
+                     ├── MongoDB
+                     └── Neo4j
+
+- I chose to have ONE SENSOR = ONE METRIC, because:
+               - To make the relationship meaningful(especially with Neo4j)
+               - To reduce the complexity of the system, especially for the MQTT subscriber (it will be flooded with messages which wil not be easy to handle)
+                            - Cleaner topics
+               - To reduce the complecity of the database (for MySQL, har*er to query), which makes it easier to scale later
+
+- This is the event schema for the MQTT messages:
+               - {
+                   "sensor_id": " ",
+                   "sensor_type": "metric",
+                   "location": "room_name",
+                   "value": 00.0,
+                   "unit": "SI_UNIT",
+                   "timestamp": "0000-00-00T00:00:00"
+                 }
+
+- Sensor simulation strategy:
+               - Use a random number generator to generate sensor data to make realistic (Controlled random walk)
+
+
+- This is the alert model, ranging form NORMAL to DANGEROUS:
+
+                                Normal      warnin*        Dange*
+             - Temprature       < 30        30 - 35         > 35
+             - Humidity         < 70                        > 70
+             - Air quality      < 50        50 - 80         > 80
+
+
+- The database write strategy is to write every incoming sensor data to the database. In the future, data retention, data archiving, and etc can be considered.
+
+- This is my chosen analytics interface, simple and intuitive enough to be used by the end user while opening the door for future extensions:
+
+             ===== Environmental Monitoring System =====
+
+             1. View Latest Readings
+             2. Average Temperature Per Room
+             3. View Sensor Relationships
+             4. Environmental Alerts
+             5. Raw Packet History
+             6. Exit
+
+- My database designs are in the folder "DatabaseDesigns", making the jobs of each database separate and clear
+
+
