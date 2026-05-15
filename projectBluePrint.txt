@@ -612,6 +612,57 @@ FIRST IMPLEMENTATION GOAL 1
 
 Sensor simulator -> MQTT publishes -> subscriber listens -> print message
 
+Sensor Object
+      ↓
+Sensor Thread
+      ↓
+MQTT Publish
+
+FILE 1: sensor.py (behavior layer)
+- Generate values
+- Store metadata
+- Create event paylo**s
+
+Each sensor object should know:
+               - Sensor id
+               - Sensor type
+               - Location
+               - Unit
+               - Current value
+               - Min/max range
+               - Publish interval
+Random walk strategy needs a sensor memory to store its previous value because the next value depends on it
+
+
+FILE 2: mqtt_publisher.py (communication layer)
+- Connect to MQTT broker
+- Publish JSON events
+- No sensor generation logic inside it
+
+
+FILE 3: sensor_manager.py (orchestration layer)
+- Creates sensor objects
+- Start sensor threads
+- Manage publishing lifecycle
+
+
+
+
+FIRST SENSOR SETUP
+Starting only with three
+| Sensor ID | Type        | Location    | Interval |
+| --------- | ----------- | ----------- | -------- |
+| S1        | temperature | Lab A       | 5s       |
+| S2        | humidity    | Lab A       | 7s       |
+| S3        | air_quality | Server Room | 10s      |
+
+MQTT SUBSCRIBER DESIGN
+- building/#
+
+
+
+
+
 
 
 
