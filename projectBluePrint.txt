@@ -660,6 +660,17 @@ MQTT SUBSCRIBER DESIGN
 - building/#
 
 
+Date 05/17/2026
+
+MySQL INTEGRATION
+- Connect to DB
+- Initialize schema
+- Insert readings
+- Insert alerts
+- Query later
+
+
+
 
 
 

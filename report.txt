@@ -365,3 +365,5 @@ Alert system design:
 
 Date 05/14/2026
 
+- Decided on the Technology Stack
+
