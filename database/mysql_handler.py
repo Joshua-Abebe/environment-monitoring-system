@@ -145,6 +145,31 @@ class MySQLHandler:
         self.connection.commit()
 
 
+    def insert_alert(
+            self,
+            sensor_id,
+            severity,
+            message,
+            timestamp
+    ):
+
+        query = """
+            INSERT INTO alert(
+                sensor_id,
+                severity,
+                message,
+                timestamp
+            )
+            VALUES (%s, %s, %s, %s)
+        """
+
+        values = (sensor_id, severity, message, timestamp)
+
+        self.cursor.execute(query, values)
+
+        self.connection.commit()
+
+
 
 
 
