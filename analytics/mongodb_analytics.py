@@ -5,13 +5,13 @@ class MongoDBAnalytics:
     def __init__(self):
 
         self.mongodb_handler = MongoDBHandler(
-            uri="mongodb://localhost:27107",
+            uri="mongodb://localhost:27017",
         )
 
 
     def view_recent_events(self):
 
-        events = mongodb_handler.collection.find().sort(
+        events = self.mongodb_handler.collection.find().sort(
             "timestamp",
             -1
         ).limit(10)

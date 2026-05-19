@@ -41,7 +41,7 @@ class MySQLAnalytics:
             JOIN sensors s 
                 ON r.sensor_id = s.sensor_id
                 
-            JOIN location l 
+            JOIN locations l 
                 ON s.location_id = l.location_id
                 
             WHERE s.sensor_type = "temperature"

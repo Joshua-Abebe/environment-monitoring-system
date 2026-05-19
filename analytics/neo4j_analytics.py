@@ -13,7 +13,7 @@ class Neo4jAnalytics:
     def view_sensor_network(self):
 
         query = """
-            MATCH (s:Sensor)-[:LOCATED_IN]->(l:location)
+            MATCH (s:Sensor)-[:LOCATED_IN]->(l:Location)
             RETURN s.id, l.name
         """
 
