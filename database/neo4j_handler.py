@@ -1,4 +1,8 @@
 from neo4j import GraphDatabase
+from config.logger import logger
+
+from colorama import Fore, init
+init(autoreset=True)
 
 class Neo4jHandler:
 
@@ -9,7 +13,7 @@ class Neo4jHandler:
             auth=(user, password)
         )
 
-        print("Connected to Neo4j")
+        logger.info("Connected to Neo4j")
 
 
     def close(self):
@@ -45,4 +49,25 @@ class Neo4jHandler:
                 location=location
             )
 
-        print(f"Relationship created for {sensor_id}")
+        logger.info(f"{Fore.GREEN}Relationship created for {sensor_id}{Fore.RESET}")
+
+
+
+    def connect_rooms(self, room1, room2):
+
+        query = """
+            MATCH (r1:Location {name: $room1})
+            MATCH (r2:Location {name: $room2})
+            
+            MERGE (r1)-[:CONNECTED_TO]->(r2)
+        """
+
+        with self.driver.session(database="environmentMonitoring") as session:
+
+            session.run(
+                query,
+                room1=room1,
+                room2=room2
+            )
+
+        logger.info(f"{Fore.GREEN}Room connection successfully created for {room1} and {room2}{Fore.RESET}")

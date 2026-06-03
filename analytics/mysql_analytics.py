@@ -1,14 +1,15 @@
 from database.mysql_handler import MySQLHandler
+from config.settings import MYSQL_CONFIG
+
+from colorama import Fore, init
+init(autoreset=True)
 
 class MySQLAnalytics:
 
     def __init__(self):
 
         self.mysql_handler = MySQLHandler(
-            host="localhost",
-            user="abc",
-            password="projects5555",
-            database="environment_monitoring"
+            **MYSQL_CONFIG
         )
 
 
@@ -28,7 +29,12 @@ class MySQLAnalytics:
         print("\n======Latest Sensor Readings=======\n")
 
         for row in results:
-            print(row)
+            print(f"""
+                Sensor ID: {row[1]}
+                Value: {row[2]}
+                Timestamp: {row[3]}
+                ---------------------------------------
+            """)
 
     def avg_temperature_per_room(self):
 
@@ -71,10 +77,54 @@ class MySQLAnalytics:
 
         results = self.mysql_handler.cursor.fetchall()
 
-        print("\n=====Environmental Alerts=====\n")
+        print(f"\n{Fore.RED}=====Environmental Alerts=====\n{Fore.RESET}")
 
         for row in results:
-            print(row)
+            print(f"{Fore.RED}{row}{Fore.RESET}")
+
+
+    def total_readings(self):
+
+        query = """
+            SELECT COUNT(*)
+            FROM readings
+        """
+
+        self.mysql_handler.cursor.execute(query)
+
+        result = self.mysql_handler.cursor.fetchone()
+
+        print(f"\n{Fore.GREEN}Total Readings: {result}{Fore.RESET}")
+
+
+
+    def total_sensors(self):
+
+        query = """
+                SELECT COUNT(*)
+                FROM sensors 
+                """
+
+        self.mysql_handler.cursor.execute(query)
+
+        result = self.mysql_handler.cursor.fetchone()
+
+        print(f"\n{Fore.GREEN}Total Sensors: {result}{Fore.RESET}")
+
+
+    def total_alerts(self):
+
+        query = """
+                SELECT COUNT(*)
+                FROM alerts 
+                """
+
+        self.mysql_handler.cursor.execute(query)
+
+        result = self.mysql_handler.cursor.fetchone()
+
+        print(f"\n{Fore.RED}Total Alerts: {result}{Fore.RESET}")
+
 
 
     

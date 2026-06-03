@@ -1,6 +1,8 @@
 import json
 import paho.mqtt.client as mqtt
 
+from config.logger import logger
+
 class MQTTPublisher:
 
     def __init__(self, broker, port):
@@ -14,7 +16,7 @@ class MQTTPublisher:
 
         self.client.connect(self.broker, self.port)
 
-        print(f"Connected to MQTT broker at {self.broker}:{self.port}")
+        logger.info(f"Connected to MQTT broker at {self.broker}:{self.port}")
 
     def publish_event(self, topic, event):
 
@@ -22,8 +24,8 @@ class MQTTPublisher:
 
         self.client.publish(topic, payload)
 
-        print(f"\nPublished to topic: {topic}")
-        print(payload)
+        logger.info(f"\nPublished to topic: {topic} | {payload}")
+
 
         
 

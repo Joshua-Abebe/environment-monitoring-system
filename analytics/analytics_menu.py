@@ -15,7 +15,9 @@ while True:
     print("3. View Environmental Alerts")
     print("4. View Raw MongoDB Events")
     print("5. View Sensor Network")
-    print("6. Exit")
+    print("6. View Room Network")
+    print("7. System Statistics")
+    print("8. Exit")
 
     choice = input("\nEnter choice: ")
 
@@ -35,6 +37,14 @@ while True:
         neo4j_analytics.view_sensor_network()
 
     elif choice == "6":
+        neo4j_analytics.view_room_network()
+
+    elif choice == "7":
+        mysql_analytics.total_readings()
+        mysql_analytics.total_sensors()
+        mysql_analytics.total_alerts()
+
+    elif choice == "8":
         print("Exiting Analytics System")
         break
 

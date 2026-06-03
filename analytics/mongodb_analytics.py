@@ -1,12 +1,11 @@
 from database.mongodb_handler import MongoDBHandler
+from config.settings import MONGO_URI
 
 class MongoDBAnalytics:
 
     def __init__(self):
 
-        self.mongodb_handler = MongoDBHandler(
-            uri="mongodb://localhost:27017",
-        )
+        self.mongodb_handler = MongoDBHandler(MONGO_URI)
 
 
     def view_recent_events(self):

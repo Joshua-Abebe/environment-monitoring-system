@@ -1,4 +1,8 @@
 import mysql.connector
+from config.logger import logger
+
+from colorama import Fore, init
+init(autoreset=True)
 
 class MySQLHandler:
 
@@ -13,7 +17,7 @@ class MySQLHandler:
 
         self.cursor = self.connection.cursor()
 
-        print("Connected to MySQL")
+        logger.info(f"{Fore.GREEN}Connected to MySQL{Fore.RESET}")
 
 
     def initialize_tables(self):
@@ -34,6 +38,7 @@ class MySQLHandler:
                 location_id INT,
                 FOREIGN KEY (location_id)
                     REFERENCES locations(location_id)
+                    ON DELETE CASCADE
             )
         """)
 
@@ -45,6 +50,7 @@ class MySQLHandler:
                 timestamp DATETIME,
                 FOREIGN KEY (sensor_id)
                     REFERENCES sensors(sensor_id)
+                    ON DELETE CASCADE
             )
         """)
 
@@ -57,12 +63,13 @@ class MySQLHandler:
                 timestamp DATETIME,
                 FOREIGN KEY (sensor_id)
                     REFERENCES sensors(sensor_id)
+                    ON DELETE CASCADE
             )
         """)
 
         self.connection.commit()
 
-        print("MySQL tables initialized")
+        logger.info(f"{Fore.GREEN}MySQL tables initialized{Fore.RESET}")
 
 
     def insert_location(self, location_name, location_type):
@@ -100,7 +107,7 @@ class MySQLHandler:
         result = self.cursor.fetchone()
 
         if result is None:
-            print(f"Location not found: {location_name}")
+            logger.warning(f"{Fore.RED}Location not found: {location_name}{Fore.RESET}")
             return
 
         location_id = result[0]
@@ -154,7 +161,7 @@ class MySQLHandler:
     ):
 
         query = """
-            INSERT INTO alert(
+            INSERT INTO alerts(
                 sensor_id,
                 severity,
                 message,

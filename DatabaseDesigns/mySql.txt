@@ -15,7 +15,7 @@ TABLE 1: SENSORS
 - unit
 - location_id (foreign key from ROOMS)
 
-TABLE 2: ROOMS
+TABLE 2: LOCATIONS
 
 - location_id
 - location_name
@@ -30,4 +30,4 @@ TABLE 3: READINGS (this is where the sensor data comes from)
 
 
 
-- For the visual ER-SCHEMA, You can request access via this link: https://drive.google.com/file/d/1FZX5be4PtP2OkL3iiHNOOJq-BKOhfEHl/view?usp=sharing
+- For the visual ER-SCHEMA, one is able to send a request for access via the link: https://drive.google.com/file/d/1FZX5be4PtP2OkL3iiHNOOJq-BKOhfEHl/view?usp=sharing

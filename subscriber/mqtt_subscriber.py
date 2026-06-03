@@ -1,8 +1,16 @@
 import json
 import paho.mqtt.client as mqtt
 
+from colorama import Fore, init
+init(autoreset=True)
+
+from config.settings import MYSQL_CONFIG
+from config.settings import MQTT_CONFIG
+from config.settings import MONGO_URI
+from config.logger import logger
 from database.mysql_handler import MySQLHandler
 from database.mongodb_handler import MongoDBHandler
+
 
 class MQTTSubscriber:
 
@@ -11,31 +19,26 @@ class MQTTSubscriber:
         self.broker = broker
         self.port = port
 
-        self.client = mqtt.Client()
+        self.client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 
         self.client.on_connect = self.on_connect
         self.client.on_message = self.on_message
 
         #connect to MySQL DB
         self.mysql_handler = MySQLHandler(
-            host="localhost",
-            user="abc",
-            password="projects5555",
-            database="environment_monitoring"
+            **MYSQL_CONFIG
         )
         #connect to MongoDB
-        self.mongodb_handler = MongoDBHandler(
-            uri="mongodb://localhost:27017"
-        )
+        self.mongodb_handler = MongoDBHandler(MONGO_URI)
 
 
-    def on_connect(self, client, userdata, flags, rc):
+    def on_connect(self, client, userdata, flags, reasonCode, properties):
 
-        print(f"Connected to MQTT broker at {self.broker}:{self.port}")
+        logger.info(f"{Fore.GREEN}Connected to MQTT broker at {self.broker}:{self.port}{Fore.RESET}")
 
         self.client.subscribe("building/#")
 
-        print("Subscribed to topic building/#")
+        logger.info(f"{Fore.YELLOW}Subscribed to topic building/#{Fore.RESET}")
 
 
     def validate_event(self, event):
@@ -62,14 +65,13 @@ class MQTTSubscriber:
 
         event = json.loads(payload)
 
-        print("\nRecieved event:")
-        print(f"Topic: {msg.topic}")
+        logger.info(f"Recieved event: {event} | Topic: {msg.topic}")
 
-        print(event)
 
         if not self.validate_event(event):
 
-            print("Received invalid event, missing required fields")
+            logger.warning(f"{Fore.RED}Received invalid event, missing required fields{Fore.RESET}")
+            logger.error(f"Invalid event: {event}")
 
             return
 
@@ -79,7 +81,7 @@ class MQTTSubscriber:
             timestamp=event["timestamp"]
         )
 
-        print("Inserted into MySQL")
+        logger.info(f"{Fore.GREEN}Inserted into MySQL{Fore.RESET}")
 
         #Alert logic
         sensor_type = event["sensor_type"]
@@ -87,17 +89,17 @@ class MQTTSubscriber:
 
         if sensor_type == "temperature" and value > 35:
 
-            print("TEMPERATURE ALERT")
+            logger.warning(Fore.RED + "TEMPERATURE ALERT" + Fore.RESET)
 
             self.mysql_handler.insert_alert(
                 sensor_id=event["sensor_id"],
                 severity="HIGH",
-                message="HIGH Temprature Detected",
+                message="HIGH Temperature Detected",
                 timestamp=event["timestamp"]
             )
         elif sensor_type == "humidity" and value > 70:
 
-            print("HUMIDITY ALERT")
+            logger.warning(Fore.RED + "HUMIDITY ALERT" + Fore.RESET)
 
             self.mysql_handler.insert_alert(
                 sensor_id=event["sensor_id"],
@@ -107,7 +109,7 @@ class MQTTSubscriber:
             )
         elif sensor_type == "air_quality" and value > 80:
 
-            print("AIR QUALITY ALERT")
+            logger.warning(Fore.RED + "AIR QUALITY ALERT" + Fore.RESET)
 
             self.mysql_handler.insert_alert(
                 sensor_id=event["sensor_id"],
@@ -130,8 +132,12 @@ class MQTTSubscriber:
 
 
 if __name__ == "__main__":
-    subscriber = MQTTSubscriber(broker="localhost", port=1883)
-    subscriber.start()
+    subscriber = MQTTSubscriber(
+        **MQTT_CONFIG
+    )
+    try:
+        subscriber.start()
 
+    except KeyboardInterrupt:
 
-
+        print(f"{Fore.YELLOW}Subscriber shutting down......{Fore.RESET}")

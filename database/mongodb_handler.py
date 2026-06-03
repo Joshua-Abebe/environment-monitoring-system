@@ -1,4 +1,8 @@
 from pymongo import MongoClient
+from config.logger import logger
+
+from colorama import Fore, init
+init(autoreset=True)
 
 class MongoDBHandler:
 
@@ -10,12 +14,12 @@ class MongoDBHandler:
 
         self.collection = self.db["sensor_events"]
 
-        print("Connected to MongoDB")
+        logger.info(f"{Fore.GREEN}Connected to MongoDB{Fore.RESET}")
 
     def insert_event(self, event):
 
         self.collection.insert_one(event)
 
-        print("Inserted into MongoDB")
+        logger.info(f"{Fore.GREEN}Inserted into MongoDB{Fore.RESET}")
 
     

@@ -1,9 +1,7 @@
 import threading
 import time
-from operator import truediv
 
-from publisher.sensor import Sensor
-from publisher.mqtt_publisher import MQTTPublisher
+from config.logger import logger
 
 class SensorManager:
 
@@ -44,7 +42,7 @@ class SensorManager:
 
             thread.start()
 
-            print(f"Thread start for {sensor.sensor_id}")
+            logger.info(f"Thread start for {sensor.sensor_id}")
 
         while True:
             time.sleep(1)
