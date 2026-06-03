@@ -1,2 +1,6 @@
 paho-mqtt
+mysql-connector-python
+pymongo
+neo4j
+python-dotenv
 colorama
