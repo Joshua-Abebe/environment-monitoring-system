@@ -13,7 +13,8 @@ class Neo4jAnalytics:
 
         query = """
             MATCH (s:Sensor)-[:LOCATED_IN]->(l:Location)
-            RETURN s.id, l.name
+            MATCH (s:Sensor)-[:MEASURES]->(m:Metric)
+            RETURN s.id, l.name, m.name
         """
 
 
@@ -25,7 +26,7 @@ class Neo4jAnalytics:
             print("\n=======Sensor Network=======\n")
 
             for record in result_query1:
-                print(f"{record['s.id']} --> {record['l.name']}")
+                print(f"{record['s.id']} --> {record['l.name']} ({record['m.name']})")
 
 
 

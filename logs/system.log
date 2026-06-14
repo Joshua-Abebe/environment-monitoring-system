@@ -5856,3 +5856,463 @@ Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_typ
 2026-06-03 10:52:20,690 - INFO - [32mInserted into MongoDB[39m
 2026-06-03 10:52:22,592 - INFO - 
 Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 44.14, "unit": "AQI", "timestamp": "2026-06-03T10:52:22.592034"}
+2026-06-14 11:41:06,704 - INFO - [32mConnected to MySQL[39m
+2026-06-14 11:41:06,712 - INFO - [32mConnected to MongoDB[39m
+2026-06-14 11:41:06,764 - INFO - [32mConnected to MQTT broker at localhost:1883[39m
+2026-06-14 11:41:06,764 - INFO - [33mSubscribed to topic building/#[39m
+2026-06-14 11:47:19,929 - INFO - Connected to MQTT broker at localhost:1883
+2026-06-14 11:47:19,930 - INFO - Thread start for s1
+2026-06-14 11:47:19,931 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 28.25, "unit": "C", "timestamp": "2026-06-14T11:47:19.930562"}
+2026-06-14 11:47:19,931 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 60.47, "unit": "%", "timestamp": "2026-06-14T11:47:19.931483"}
+2026-06-14 11:47:19,931 - INFO - Thread start for s2
+2026-06-14 11:47:19,932 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 39.9, "unit": "AQI", "timestamp": "2026-06-14T11:47:19.932105"}
+2026-06-14 11:47:19,932 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 28.25, 'unit': 'C', 'timestamp': '2026-06-14T11:47:19.930562'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:19,932 - INFO - Thread start for s3
+2026-06-14 11:47:19,932 - INFO - Thread start for s4
+2026-06-14 11:47:19,932 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 26.8, "unit": "C", "timestamp": "2026-06-14T11:47:19.932759"}
+2026-06-14 11:47:19,933 - INFO - Thread start for s5
+2026-06-14 11:47:19,933 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.56, "unit": "%", "timestamp": "2026-06-14T11:47:19.933418"}
+2026-06-14 11:47:19,934 - INFO - Thread start for s6
+2026-06-14 11:47:19,934 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 44.78, "unit": "AQI", "timestamp": "2026-06-14T11:47:19.934145"}
+2026-06-14 11:47:19,952 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,959 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:19,960 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 60.47, 'unit': '%', 'timestamp': '2026-06-14T11:47:19.931483'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:19,966 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,967 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:19,968 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 39.9, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:19.932105'} | Topic: building/server_room/air_quality
+2026-06-14 11:47:19,969 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,971 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:19,971 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 26.8, 'unit': 'C', 'timestamp': '2026-06-14T11:47:19.932759'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:19,973 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,975 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:19,975 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.56, 'unit': '%', 'timestamp': '2026-06-14T11:47:19.933418'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:19,978 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,979 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:19,980 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 44.78, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:19.934145'} | Topic: building/office_1/air quality
+2026-06-14 11:47:19,981 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:19,982 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:24,932 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.88, "unit": "C", "timestamp": "2026-06-14T11:47:24.931883"}
+2026-06-14 11:47:24,932 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.88, 'unit': 'C', 'timestamp': '2026-06-14T11:47:24.931883'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:24,933 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 27.28, "unit": "C", "timestamp": "2026-06-14T11:47:24.933473"}
+2026-06-14 11:47:24,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:24,943 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:24,943 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 27.28, 'unit': 'C', 'timestamp': '2026-06-14T11:47:24.933473'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:24,947 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:24,949 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:26,932 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 60.33, "unit": "%", "timestamp": "2026-06-14T11:47:26.932087"}
+2026-06-14 11:47:26,932 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 60.33, 'unit': '%', 'timestamp': '2026-06-14T11:47:26.932087'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:26,934 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.46, "unit": "%", "timestamp": "2026-06-14T11:47:26.934418"}
+2026-06-14 11:47:26,935 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:26,935 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:26,936 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.46, 'unit': '%', 'timestamp': '2026-06-14T11:47:26.934418'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:26,938 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:26,939 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:28,935 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 44.86, "unit": "AQI", "timestamp": "2026-06-14T11:47:28.934918"}
+2026-06-14 11:47:28,935 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 44.86, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:28.934918'} | Topic: building/office_1/air quality
+2026-06-14 11:47:28,942 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:28,943 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:29,933 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 39.97, "unit": "AQI", "timestamp": "2026-06-14T11:47:29.932872"}
+2026-06-14 11:47:29,933 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 39.97, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:29.932872'} | Topic: building/server_room/air_quality
+2026-06-14 11:47:29,933 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.55, "unit": "C", "timestamp": "2026-06-14T11:47:29.933352"}
+2026-06-14 11:47:29,934 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 26.9, "unit": "C", "timestamp": "2026-06-14T11:47:29.934559"}
+2026-06-14 11:47:29,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:29,943 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:29,943 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.55, 'unit': 'C', 'timestamp': '2026-06-14T11:47:29.933352'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:29,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:29,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:29,947 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 26.9, 'unit': 'C', 'timestamp': '2026-06-14T11:47:29.934559'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:29,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:29,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:33,933 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.84, "unit": "%", "timestamp": "2026-06-14T11:47:33.933288"}
+2026-06-14 11:47:33,933 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.84, 'unit': '%', 'timestamp': '2026-06-14T11:47:33.933288'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:33,935 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.75, "unit": "%", "timestamp": "2026-06-14T11:47:33.935086"}
+2026-06-14 11:47:33,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:33,942 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:33,942 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.75, 'unit': '%', 'timestamp': '2026-06-14T11:47:33.935086'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:33,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:33,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:34,934 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.31, "unit": "C", "timestamp": "2026-06-14T11:47:34.934456"}
+2026-06-14 11:47:34,935 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.31, 'unit': 'C', 'timestamp': '2026-06-14T11:47:34.934456'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:34,935 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 26.71, "unit": "C", "timestamp": "2026-06-14T11:47:34.935423"}
+2026-06-14 11:47:34,940 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:34,942 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:34,943 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 26.71, 'unit': 'C', 'timestamp': '2026-06-14T11:47:34.935423'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:34,949 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:34,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:37,936 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.09, "unit": "AQI", "timestamp": "2026-06-14T11:47:37.935846"}
+2026-06-14 11:47:37,936 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.09, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:37.935846'} | Topic: building/office_1/air quality
+2026-06-14 11:47:37,943 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:37,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:39,934 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 39.66, "unit": "AQI", "timestamp": "2026-06-14T11:47:39.933783"}
+2026-06-14 11:47:39,934 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 39.66, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:39.933783'} | Topic: building/server_room/air_quality
+2026-06-14 11:47:39,936 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.85, "unit": "C", "timestamp": "2026-06-14T11:47:39.935853"}
+2026-06-14 11:47:39,937 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 27.05, "unit": "C", "timestamp": "2026-06-14T11:47:39.937102"}
+2026-06-14 11:47:39,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:39,942 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:39,943 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.85, 'unit': 'C', 'timestamp': '2026-06-14T11:47:39.935853'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:39,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:39,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:39,947 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 27.05, 'unit': 'C', 'timestamp': '2026-06-14T11:47:39.937102'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:39,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:39,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:40,934 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.73, "unit": "%", "timestamp": "2026-06-14T11:47:40.934302"}
+2026-06-14 11:47:40,934 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.73, 'unit': '%', 'timestamp': '2026-06-14T11:47:40.934302'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:40,936 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.36, "unit": "%", "timestamp": "2026-06-14T11:47:40.935900"}
+2026-06-14 11:47:40,942 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:40,943 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:40,944 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.36, 'unit': '%', 'timestamp': '2026-06-14T11:47:40.935900'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:40,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:40,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:44,937 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.3, "unit": "C", "timestamp": "2026-06-14T11:47:44.936957"}
+2026-06-14 11:47:44,938 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.3, 'unit': 'C', 'timestamp': '2026-06-14T11:47:44.936957'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:44,938 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 27.49, "unit": "C", "timestamp": "2026-06-14T11:47:44.937905"}
+2026-06-14 11:47:44,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:44,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:44,947 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 27.49, 'unit': 'C', 'timestamp': '2026-06-14T11:47:44.937905'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:44,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:44,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:46,936 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.15, "unit": "AQI", "timestamp": "2026-06-14T11:47:46.936733"}
+2026-06-14 11:47:46,937 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.15, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:46.936733'} | Topic: building/office_1/air quality
+2026-06-14 11:47:46,943 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:46,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:47,935 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.8, "unit": "%", "timestamp": "2026-06-14T11:47:47.935153"}
+2026-06-14 11:47:47,935 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.8, 'unit': '%', 'timestamp': '2026-06-14T11:47:47.935153'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:47,936 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.2, "unit": "%", "timestamp": "2026-06-14T11:47:47.936722"}
+2026-06-14 11:47:47,942 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:47,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:47,944 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.2, 'unit': '%', 'timestamp': '2026-06-14T11:47:47.936722'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:47,947 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:47,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:49,935 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 39.71, "unit": "AQI", "timestamp": "2026-06-14T11:47:49.935074"}
+2026-06-14 11:47:49,936 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 39.71, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:49.935074'} | Topic: building/server_room/air_quality
+2026-06-14 11:47:49,939 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.96, "unit": "C", "timestamp": "2026-06-14T11:47:49.939180"}
+2026-06-14 11:47:49,940 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 27.44, "unit": "C", "timestamp": "2026-06-14T11:47:49.939871"}
+2026-06-14 11:47:49,943 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:49,945 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:49,945 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.96, 'unit': 'C', 'timestamp': '2026-06-14T11:47:49.939180'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:49,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:49,952 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:49,953 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 27.44, 'unit': 'C', 'timestamp': '2026-06-14T11:47:49.939871'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:49,957 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:49,958 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:53,427 - INFO - [32mConnected to MySQL[39m
+2026-06-14 11:47:53,431 - INFO - [32mConnected to MongoDB[39m
+2026-06-14 11:47:53,432 - INFO - Connected to Neo4j
+2026-06-14 11:47:54,936 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.31, "unit": "%", "timestamp": "2026-06-14T11:47:54.936186"}
+2026-06-14 11:47:54,936 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.31, 'unit': '%', 'timestamp': '2026-06-14T11:47:54.936186'} | Topic: building/lab_a/humidity
+2026-06-14 11:47:54,938 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.62, "unit": "%", "timestamp": "2026-06-14T11:47:54.938190"}
+2026-06-14 11:47:54,941 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.8, "unit": "C", "timestamp": "2026-06-14T11:47:54.940875"}
+2026-06-14 11:47:54,941 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 27.78, "unit": "C", "timestamp": "2026-06-14T11:47:54.941382"}
+2026-06-14 11:47:54,942 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:54,943 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:54,944 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.62, 'unit': '%', 'timestamp': '2026-06-14T11:47:54.938190'} | Topic: building/lab_b/humidity
+2026-06-14 11:47:54,947 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:54,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:54,948 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.8, 'unit': 'C', 'timestamp': '2026-06-14T11:47:54.940875'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:54,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:54,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:54,952 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 27.78, 'unit': 'C', 'timestamp': '2026-06-14T11:47:54.941382'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:54,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:54,957 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:55,937 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.24, "unit": "AQI", "timestamp": "2026-06-14T11:47:55.937649"}
+2026-06-14 11:47:55,938 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.24, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:55.937649'} | Topic: building/office_1/air quality
+2026-06-14 11:47:55,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:55,942 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:59,937 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 39.9, "unit": "AQI", "timestamp": "2026-06-14T11:47:59.936697"}
+2026-06-14 11:47:59,937 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 39.9, 'unit': 'AQI', 'timestamp': '2026-06-14T11:47:59.936697'} | Topic: building/server_room/air_quality
+2026-06-14 11:47:59,941 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:59,943 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.01, "unit": "C", "timestamp": "2026-06-14T11:47:59.942436"}
+2026-06-14 11:47:59,943 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.1, "unit": "C", "timestamp": "2026-06-14T11:47:59.942804"}
+2026-06-14 11:47:59,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:59,945 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.01, 'unit': 'C', 'timestamp': '2026-06-14T11:47:59.942436'} | Topic: building/lab_b/temperature
+2026-06-14 11:47:59,948 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:59,949 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:47:59,949 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.1, 'unit': 'C', 'timestamp': '2026-06-14T11:47:59.942804'} | Topic: building/lab_a/temperature
+2026-06-14 11:47:59,951 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:47:59,952 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:01,937 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.72, "unit": "%", "timestamp": "2026-06-14T11:48:01.937198"}
+2026-06-14 11:48:01,938 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.72, 'unit': '%', 'timestamp': '2026-06-14T11:48:01.937198'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:01,939 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.11, "unit": "%", "timestamp": "2026-06-14T11:48:01.939170"}
+2026-06-14 11:48:01,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:01,949 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:01,950 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.11, 'unit': '%', 'timestamp': '2026-06-14T11:48:01.939170'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:01,953 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:01,954 - WARNING - [31mHUMIDITY ALERT[39m
+2026-06-14 11:48:01,961 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:04,939 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.25, "unit": "AQI", "timestamp": "2026-06-14T11:48:04.938815"}
+2026-06-14 11:48:04,939 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.25, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:04.938815'} | Topic: building/office_1/air quality
+2026-06-14 11:48:04,943 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:04,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:04,944 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.26, "unit": "C", "timestamp": "2026-06-14T11:48:04.944363"}
+2026-06-14 11:48:04,944 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.26, 'unit': 'C', 'timestamp': '2026-06-14T11:48:04.944363'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:04,944 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.09, "unit": "C", "timestamp": "2026-06-14T11:48:04.944844"}
+2026-06-14 11:48:04,947 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:04,949 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:04,949 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.09, 'unit': 'C', 'timestamp': '2026-06-14T11:48:04.944844'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:04,951 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:04,953 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:08,939 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.78, "unit": "%", "timestamp": "2026-06-14T11:48:08.938755"}
+2026-06-14 11:48:08,940 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.78, 'unit': '%', 'timestamp': '2026-06-14T11:48:08.938755'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:08,940 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.49, "unit": "%", "timestamp": "2026-06-14T11:48:08.940539"}
+2026-06-14 11:48:08,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:08,953 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:08,954 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.49, 'unit': '%', 'timestamp': '2026-06-14T11:48:08.940539'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:08,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:08,957 - WARNING - [31mHUMIDITY ALERT[39m
+2026-06-14 11:48:08,961 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:09,938 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 40.36, "unit": "AQI", "timestamp": "2026-06-14T11:48:09.937616"}
+2026-06-14 11:48:09,938 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 40.36, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:09.937616'} | Topic: building/server_room/air_quality
+2026-06-14 11:48:09,943 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:09,944 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:09,945 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.48, "unit": "C", "timestamp": "2026-06-14T11:48:09.945135"}
+2026-06-14 11:48:09,945 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.48, 'unit': 'C', 'timestamp': '2026-06-14T11:48:09.945135'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:09,945 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.6, "unit": "C", "timestamp": "2026-06-14T11:48:09.945576"}
+2026-06-14 11:48:09,948 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:09,949 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:09,950 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.6, 'unit': 'C', 'timestamp': '2026-06-14T11:48:09.945576'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:09,952 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:09,953 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:13,939 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.54, "unit": "AQI", "timestamp": "2026-06-14T11:48:13.939505"}
+2026-06-14 11:48:13,939 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.54, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:13.939505'} | Topic: building/office_1/air quality
+2026-06-14 11:48:13,947 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:13,948 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:14,946 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.28, "unit": "C", "timestamp": "2026-06-14T11:48:14.945986"}
+2026-06-14 11:48:14,947 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.28, 'unit': 'C', 'timestamp': '2026-06-14T11:48:14.945986'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:14,947 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.65, "unit": "C", "timestamp": "2026-06-14T11:48:14.946698"}
+2026-06-14 11:48:14,955 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:14,955 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:14,956 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.65, 'unit': 'C', 'timestamp': '2026-06-14T11:48:14.946698'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:14,958 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:14,959 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:15,940 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.47, "unit": "%", "timestamp": "2026-06-14T11:48:15.940578"}
+2026-06-14 11:48:15,941 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.47, 'unit': '%', 'timestamp': '2026-06-14T11:48:15.940578'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:15,942 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.73, "unit": "%", "timestamp": "2026-06-14T11:48:15.942130"}
+2026-06-14 11:48:15,948 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:15,950 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:15,950 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.73, 'unit': '%', 'timestamp': '2026-06-14T11:48:15.942130'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:15,953 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:15,953 - WARNING - [31mHUMIDITY ALERT[39m
+2026-06-14 11:48:15,956 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:19,940 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 40.79, "unit": "AQI", "timestamp": "2026-06-14T11:48:19.939634"}
+2026-06-14 11:48:19,940 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 40.79, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:19.939634'} | Topic: building/server_room/air_quality
+2026-06-14 11:48:19,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:19,948 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.76, "unit": "C", "timestamp": "2026-06-14T11:48:19.948164"}
+2026-06-14 11:48:19,948 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:19,948 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.1, "unit": "C", "timestamp": "2026-06-14T11:48:19.948562"}
+2026-06-14 11:48:19,948 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.76, 'unit': 'C', 'timestamp': '2026-06-14T11:48:19.948164'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:19,951 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:19,952 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:19,952 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.1, 'unit': 'C', 'timestamp': '2026-06-14T11:48:19.948562'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:19,954 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:19,955 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:22,941 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.38, "unit": "AQI", "timestamp": "2026-06-14T11:48:22.940430"}
+2026-06-14 11:48:22,941 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.38, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:22.940430'} | Topic: building/office_1/air quality
+2026-06-14 11:48:22,942 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.09, "unit": "%", "timestamp": "2026-06-14T11:48:22.941947"}
+2026-06-14 11:48:22,943 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.41, "unit": "%", "timestamp": "2026-06-14T11:48:22.942929"}
+2026-06-14 11:48:22,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:22,954 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:22,955 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.09, 'unit': '%', 'timestamp': '2026-06-14T11:48:22.941947'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:22,959 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:22,960 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:22,960 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.41, 'unit': '%', 'timestamp': '2026-06-14T11:48:22.942929'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:22,962 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:22,963 - WARNING - [31mHUMIDITY ALERT[39m
+2026-06-14 11:48:22,966 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:24,949 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.99, "unit": "C", "timestamp": "2026-06-14T11:48:24.949422"}
+2026-06-14 11:48:24,949 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.99, 'unit': 'C', 'timestamp': '2026-06-14T11:48:24.949422'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:24,949 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.12, "unit": "C", "timestamp": "2026-06-14T11:48:24.949601"}
+2026-06-14 11:48:24,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:24,957 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:24,958 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.12, 'unit': 'C', 'timestamp': '2026-06-14T11:48:24.949601'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:24,960 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:24,961 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:29,942 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 40.68, "unit": "AQI", "timestamp": "2026-06-14T11:48:29.941443"}
+2026-06-14 11:48:29,942 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 40.68, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:29.941443'} | Topic: building/server_room/air_quality
+2026-06-14 11:48:29,943 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 58.67, "unit": "%", "timestamp": "2026-06-14T11:48:29.943638"}
+2026-06-14 11:48:29,944 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.0, "unit": "%", "timestamp": "2026-06-14T11:48:29.944183"}
+2026-06-14 11:48:29,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:29,950 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.78, "unit": "C", "timestamp": "2026-06-14T11:48:29.950426"}
+2026-06-14 11:48:29,951 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 26.85, "unit": "C", "timestamp": "2026-06-14T11:48:29.950590"}
+2026-06-14 11:48:29,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:29,952 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 58.67, 'unit': '%', 'timestamp': '2026-06-14T11:48:29.943638'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:29,954 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:29,955 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:29,955 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.0, 'unit': '%', 'timestamp': '2026-06-14T11:48:29.944183'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:29,959 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:29,960 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:29,960 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.78, 'unit': 'C', 'timestamp': '2026-06-14T11:48:29.950426'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:29,963 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:29,963 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:29,964 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 26.85, 'unit': 'C', 'timestamp': '2026-06-14T11:48:29.950590'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:29,966 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:29,967 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:31,942 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.81, "unit": "AQI", "timestamp": "2026-06-14T11:48:31.942404"}
+2026-06-14 11:48:31,943 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.81, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:31.942404'} | Topic: building/office_1/air quality
+2026-06-14 11:48:31,952 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:31,956 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:34,952 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.54, "unit": "C", "timestamp": "2026-06-14T11:48:34.951806"}
+2026-06-14 11:48:34,952 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.54, 'unit': 'C', 'timestamp': '2026-06-14T11:48:34.951806'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:34,952 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.24, "unit": "C", "timestamp": "2026-06-14T11:48:34.952041"}
+2026-06-14 11:48:34,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:34,958 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:34,958 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.24, 'unit': 'C', 'timestamp': '2026-06-14T11:48:34.952041'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:34,961 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:34,962 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:36,945 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 59.0, "unit": "%", "timestamp": "2026-06-14T11:48:36.945335"}
+2026-06-14 11:48:36,945 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.6, 'unit': '%', 'timestamp': '2026-06-14T11:48:36.945180'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:36,945 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.6, "unit": "%", "timestamp": "2026-06-14T11:48:36.945180"}
+2026-06-14 11:48:36,952 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:36,953 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:36,954 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 59.0, 'unit': '%', 'timestamp': '2026-06-14T11:48:36.945335'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:36,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:36,957 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:39,943 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 41.01, "unit": "AQI", "timestamp": "2026-06-14T11:48:39.943226"}
+2026-06-14 11:48:39,943 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 41.01, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:39.943226'} | Topic: building/server_room/air_quality
+2026-06-14 11:48:39,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:39,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:39,953 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.66, "unit": "C", "timestamp": "2026-06-14T11:48:39.953439"}
+2026-06-14 11:48:39,953 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 28.58, 'unit': 'C', 'timestamp': '2026-06-14T11:48:39.953327'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:39,953 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 28.58, "unit": "C", "timestamp": "2026-06-14T11:48:39.953327"}
+2026-06-14 11:48:39,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:39,957 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:39,958 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.66, 'unit': 'C', 'timestamp': '2026-06-14T11:48:39.953439'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:39,961 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:39,962 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:40,943 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.74, "unit": "AQI", "timestamp": "2026-06-14T11:48:40.943593"}
+2026-06-14 11:48:40,944 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.74, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:40.943593'} | Topic: building/office_1/air quality
+2026-06-14 11:48:40,950 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:40,951 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:43,948 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 58.59, "unit": "%", "timestamp": "2026-06-14T11:48:43.947188"}
+2026-06-14 11:48:43,948 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 58.59, 'unit': '%', 'timestamp': '2026-06-14T11:48:43.947188'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:43,948 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 70.09, "unit": "%", "timestamp": "2026-06-14T11:48:43.947600"}
+2026-06-14 11:48:43,957 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:43,960 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:43,961 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 70.09, 'unit': '%', 'timestamp': '2026-06-14T11:48:43.947600'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:43,966 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:43,967 - WARNING - [31mHUMIDITY ALERT[39m
+2026-06-14 11:48:43,971 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:44,954 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 29.0, "unit": "C", "timestamp": "2026-06-14T11:48:44.954307"}
+2026-06-14 11:48:44,954 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 29.0, 'unit': 'C', 'timestamp': '2026-06-14T11:48:44.954307'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:44,955 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.49, "unit": "C", "timestamp": "2026-06-14T11:48:44.954529"}
+2026-06-14 11:48:44,962 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:44,963 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:44,964 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.49, 'unit': 'C', 'timestamp': '2026-06-14T11:48:44.954529'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:44,967 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:44,969 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:49,944 - INFO - 
+Published to topic: building/server_room/air_quality | {"sensor_id": "s3", "sensor_type": "air_quality", "location": "Server Room", "value": 41.09, "unit": "AQI", "timestamp": "2026-06-14T11:48:49.943821"}
+2026-06-14 11:48:49,944 - INFO - Recieved event: {'sensor_id': 's3', 'sensor_type': 'air_quality', 'location': 'Server Room', 'value': 41.09, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:49.943821'} | Topic: building/server_room/air_quality
+2026-06-14 11:48:49,944 - INFO - 
+Published to topic: building/office_1/air quality | {"sensor_id": "s6", "sensor_type": "air quality", "location": "Office 1", "value": 45.95, "unit": "AQI", "timestamp": "2026-06-14T11:48:49.944332"}
+2026-06-14 11:48:49,946 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:49,947 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:49,947 - INFO - Recieved event: {'sensor_id': 's6', 'sensor_type': 'air quality', 'location': 'Office 1', 'value': 45.95, 'unit': 'AQI', 'timestamp': '2026-06-14T11:48:49.944332'} | Topic: building/office_1/air quality
+2026-06-14 11:48:49,949 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:49,950 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:49,956 - INFO - 
+Published to topic: building/lab_a/temperature | {"sensor_id": "s1", "sensor_type": "temperature", "location": "Lab A", "value": 27.91, "unit": "C", "timestamp": "2026-06-14T11:48:49.955875"}
+2026-06-14 11:48:49,956 - INFO - Recieved event: {'sensor_id': 's1', 'sensor_type': 'temperature', 'location': 'Lab A', 'value': 27.91, 'unit': 'C', 'timestamp': '2026-06-14T11:48:49.955875'} | Topic: building/lab_a/temperature
+2026-06-14 11:48:49,956 - INFO - 
+Published to topic: building/lab_b/temperature | {"sensor_id": "s4", "sensor_type": "temperature", "location": "Lab B", "value": 29.38, "unit": "C", "timestamp": "2026-06-14T11:48:49.956023"}
+2026-06-14 11:48:49,958 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:49,960 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:49,960 - INFO - Recieved event: {'sensor_id': 's4', 'sensor_type': 'temperature', 'location': 'Lab B', 'value': 29.38, 'unit': 'C', 'timestamp': '2026-06-14T11:48:49.956023'} | Topic: building/lab_b/temperature
+2026-06-14 11:48:49,962 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:49,964 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:50,949 - INFO - 
+Published to topic: building/lab_a/humidity | {"sensor_id": "s2", "sensor_type": "humidity", "location": "Lab A", "value": 58.81, "unit": "%", "timestamp": "2026-06-14T11:48:50.949467"}
+2026-06-14 11:48:50,950 - INFO - Recieved event: {'sensor_id': 's2', 'sensor_type': 'humidity', 'location': 'Lab A', 'value': 58.81, 'unit': '%', 'timestamp': '2026-06-14T11:48:50.949467'} | Topic: building/lab_a/humidity
+2026-06-14 11:48:50,950 - INFO - 
+Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type": "humidity", "location": "Lab B", "value": 69.61, "unit": "%", "timestamp": "2026-06-14T11:48:50.949991"}
+2026-06-14 11:48:50,956 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:50,958 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:48:50,958 - INFO - Recieved event: {'sensor_id': 's5', 'sensor_type': 'humidity', 'location': 'Lab B', 'value': 69.61, 'unit': '%', 'timestamp': '2026-06-14T11:48:50.949991'} | Topic: building/lab_b/humidity
+2026-06-14 11:48:50,962 - INFO - [32mInserted into MySQL[39m
+2026-06-14 11:48:50,963 - INFO - [32mInserted into MongoDB[39m
+2026-06-14 11:52:36,409 - INFO - [32mConnected to MySQL[39m
+2026-06-14 11:52:36,413 - INFO - [32mConnected to MongoDB[39m
+2026-06-14 11:52:36,414 - INFO - Connected to Neo4j
+2026-06-14 11:53:48,933 - INFO - [32mConnected to MySQL[39m
+2026-06-14 11:53:48,936 - INFO - [32mConnected to MongoDB[39m
+2026-06-14 11:53:48,937 - INFO - Connected to Neo4j
