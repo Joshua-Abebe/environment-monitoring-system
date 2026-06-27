@@ -1,0 +1,4 @@
+2026-06-14 12:09:44,540 - INFO - [32mConnected to MySQL[39m
+2026-06-14 12:09:44,545 - INFO - [32mConnected to MongoDB[39m
+2026-06-14 12:09:44,550 - INFO - [32mConnected to MQTT broker at localhost:1883[39m
+2026-06-14 12:09:44,550 - INFO - [33mSubscribed to topic building/#[39m

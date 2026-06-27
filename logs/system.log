@@ -6316,3 +6316,6 @@ Published to topic: building/lab_b/humidity | {"sensor_id": "s5", "sensor_type":
 2026-06-14 11:53:48,933 - INFO - [32mConnected to MySQL[39m
 2026-06-14 11:53:48,936 - INFO - [32mConnected to MongoDB[39m
 2026-06-14 11:53:48,937 - INFO - Connected to Neo4j
+2026-06-27 07:07:07,392 - INFO - [32mConnected to MySQL[39m
+2026-06-27 07:07:07,414 - INFO - [32mConnected to MongoDB[39m
+2026-06-27 07:07:07,415 - INFO - Connected to Neo4j

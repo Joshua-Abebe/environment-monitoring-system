@@ -1,0 +1,177 @@
+                    Docker Network
+┌────────────────────────────────────────────────────┐
+│                                                    │
+│  Publisher Container                               │
+│           │                                        │
+│           ▼                                        │
+│     Mosquitto Container                            │
+│           │                                        │
+│           ▼                                        │
+│    Subscriber Container                            │
+│      ├────────► MySQL Container                    │
+│      ├────────► MongoDB Container                  │
+│      └────────► Neo4j Container                    │
+│                                                    │
+│     Analytics Container                            │
+│          ▲                                         │
+│          └──────── queries all databases           │
+└────────────────────────────────────────────────────┘
+
+
+environment-monitoring-system/
+│
+├── analytics/
+├── config/
+├── database/
+├── logs/
+├── publisher/
+├── subscriber/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── .env
+└── README.md
+
+
+                     Docker Network
+                           │
+     ┌─────────────────────┼──────────────────────┐
+     │                     │                      │
+ Publisher            Subscriber            Analytics
+     │                     │                      │
+     └──────────── MQTT Broker ───────────────────┘
+                           │
+        ┌────────────┬───────────────┬────────────┐
+        │            │               │
+      MySQL      MongoDB         Neo4j
+
+
+
+
+                              USER
+                                │
+                          Streamlit UI
+                                │
+              ┌─────────────────┼──────────────────┐
+              │                 │                  │
+              ▼                 ▼                  ▼
+       Administration      Analytics         Monitoring
+              │                 │                  │
+              └─────────────────┼──────────────────┘
+                                │
+                          REST Service Layer
+                                │
+               ┌────────────────┼─────────────────┐
+               ▼                ▼                 ▼
+            MQTT Service   Database Service   Metrics Service
+               │                │                 │
+               ▼                ▼                 ▼
+            Mosquitto      MySQL Mongo Neo4j   Metrics Engine
+                                │
+                                ▼
+                          Docker Network
+
+
+
+                    Environmental Monitoring Platform
+
+┌──────────────────────────────────────────────────────────────┐
+│                      1. Management                           │
+│  Sensors • Rooms • Relationships • Configuration            │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│                     2. Data Pipeline                         │
+│  Simulation • MQTT • Subscriber • Databases                 │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│                     3. Analytics                             │
+│  Insights • Queries • Statistics • Reports                  │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│                  4. Observability                            │
+│  Metrics • Health • Logs • Event Trace • Architecture       │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│                  5. Infrastructure                           │
+│ Docker • Networking • Configuration • Deployment            │
+└──────────────────────────────────────────────────────────────┘
+
+EVERYTHING REVOLVES AROUND EVENTS:
+
+GENERATED
+      │
+      ▼
+PUBLISHED
+      │
+      ▼
+BROKERED
+      │
+      ▼
+RECEIVED
+      │
+      ▼
+VALIDATED
+      │
+      ▼
+PERSISTED
+      │
+      ├────────► MySQL
+      │
+      └────────► MongoDB
+      │
+      ▼
+ANALYZED
+      │
+      ▼
+VISUALIZED
+
+"The Environmental Monitoring Platform is designed as a modular, event-driven system where every event is traceable,
+every component is observable, and every service has a single responsibility."
+
+"Every event tells a story. Every service contributes one chapter. Observability tells the whole story."
+
+
+Term	                                    Meaning
+Event	                     The atomic unit of information flowing through the platform.
+Session	                     A single execution lifecycle of the platform.
+Observability	             The ability to understand the internal state through metrics, traces, logs, and health.
+Digital Twin	             A live representation of the running platform.
+Event Trace	                 The complete lifecycle of one event identified by its UUID.
+Pipeline	                 The ordered path an event follows through the system.
+Persistence	                 Long-term storage of events in one or more databases.
+Platform	                 The complete ecosystem of services, infrastructure, and interfaces.
+
+
+NEW FEATURE
+      │
+      ▼
+Does it belong to one pillar?
+      │
+      ▼
+Does it violate an Architectural Law?
+      │
+      ▼
+Does it introduce a second responsibility?
+      │
+      ▼
+Can it be observed?
+      │
+      ▼
+Can it be measured?
+      │
+      ▼
+Can it be traced?
+      │
+      ▼
+Can it be containerized?
+      │
+      ▼
+Does it reduce or increase complexity?
+      │
+      ▼
+APPROVED
