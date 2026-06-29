@@ -25,7 +25,7 @@ neo4j_handler.create_sensor_relationships(
 
 neo4j_handler.create_sensor_relationships(
     sensor_id="s4",
-    sensor_type="temprature",
+    sensor_type="temperature",
     location="Lab B"
 )
 

@@ -9,6 +9,10 @@ class Neo4jAnalytics:
             **NEO4J_CONFIG
         )
 
+    def close(self):
+
+        self.neo4j_handler.close()
+
     def view_sensor_network(self):
 
         query = """
@@ -18,7 +22,7 @@ class Neo4jAnalytics:
         """
 
 
-        with self.neo4j_handler.driver.session(database="environmentMonitoring") as session:
+        with self.neo4j_handler.driver.session(database="environmentmonitoring") as session:
 
             result_query1 = session.run(query)
 
@@ -37,7 +41,7 @@ class Neo4jAnalytics:
             RETURN r1.name, r2.name
         """
 
-        with self.neo4j_handler.driver.session(database="environmentMonitoring") as session:
+        with self.neo4j_handler.driver.session(database="environmentmonitoring") as session:
 
             result_query1 = session.run(query)
 

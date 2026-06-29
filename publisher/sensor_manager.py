@@ -3,6 +3,9 @@ import time
 
 from config.logger import logger
 
+from colorama import Fore, init
+init(autoreset=True)
+
 class SensorManager:
 
     def __init__(self, publisher):
@@ -20,11 +23,21 @@ class SensorManager:
     def sensor_loop(self, sensor):
 
         while True:
-            event = sensor.create_event()
+            try:
+                event = sensor.create_event()
 
-            topic = f"building/{sensor.location.lower().replace(' ', '_')}/{sensor.sensor_type}"
+                topic = f"building/{sensor.location.lower().replace(' ', '_')}/{sensor.sensor_type}"
 
-            self.publisher.publish_event(topic, event)
+                self.publisher.publish_event(topic, event)
+
+            except Exception:
+                # A daemon thread that raises here would die silently --
+                # the loop would just stop and that sensor would never
+                # publish again, with nothing but a stderr traceback to
+                # show for it. Log and keep looping instead, so one bad
+                # publish (broker hiccup, etc.) can't permanently kill a
+                # sensor's data.
+                logger.exception(f"{Fore.RED}Sensor {sensor.sensor_id} failed to publish, will retry{Fore.RESET}")
 
             time.sleep(sensor.interval)
 
@@ -46,9 +59,3 @@ class SensorManager:
 
         while True:
             time.sleep(1)
-
-
-
-
-
-

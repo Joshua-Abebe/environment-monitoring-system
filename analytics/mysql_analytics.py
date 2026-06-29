@@ -13,6 +13,11 @@ class MySQLAnalytics:
         )
 
 
+    def close(self):
+
+        self.mysql_handler.connection.close()
+
+
     def latest_readings(self):
 
         query = """
@@ -50,7 +55,7 @@ class MySQLAnalytics:
             JOIN locations l 
                 ON s.location_id = l.location_id
                 
-            WHERE s.sensor_type = "temperature"
+            WHERE s.sensor_type = 'temperature'
                 
             GROUP BY l.location_name
         """

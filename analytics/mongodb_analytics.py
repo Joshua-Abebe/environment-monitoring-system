@@ -8,6 +8,11 @@ class MongoDBAnalytics:
         self.mongodb_handler = MongoDBHandler(MONGO_URI)
 
 
+    def close(self):
+
+        self.mongodb_handler.client.close()
+
+
     def view_recent_events(self):
 
         events = self.mongodb_handler.collection.find().sort(
@@ -19,4 +24,3 @@ class MongoDBAnalytics:
 
         for event in events:
             print(event)
-

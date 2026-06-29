@@ -1,6 +1,9 @@
-paho-mqtt
+paho-mqtt>=2.0,<3
 mysql-connector-python
 pymongo
 neo4j
 python-dotenv
 colorama
+streamlit
+pandas
+tzdata

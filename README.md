@@ -13,9 +13,13 @@ The system simulates concurrent environmental sensors publishing telemetry data 
 * Controlled random walk sensor value generation
 * MySQL integration for structured relational analytics
 * MongoDB integration for raw JSON event storage
-* Neo4j integration for graph-based relationship modeling
-* Real-time alert detection and persistence
+* Neo4j integration for graph-based relationship modeling, kept automatically in sync with live sensor events
+* Real-time alert detection and persistence, with defensive normalization so a stray typo/case mismatch in a sensor payload can't silently disable an alert
+* Per-event pipeline performance metrics (validation/MySQL/MongoDB latency) for the dashboard's Performance page
 * Centralized analytics engine
+* Streamlit web dashboard (system overview, live readings, alerts, performance, analytics, manage)
+* Containerized with Docker Compose (broker, three databases, publisher, subscriber, dashboard)
+* Automated unit test suite (pytest) with CI on every push
 * Environment variable management using `.env`
 * System logging using `logger.py`
 * Colorized terminal output using `colorama`
@@ -38,6 +42,9 @@ The system simulates concurrent environmental sensors publishing telemetry data 
 * MySQL Connector Python
 * Colorama
 * Python Dotenv
+* Streamlit
+* pytest
+* GitHub Actions
 
 ---
 
@@ -56,7 +63,7 @@ MQTT Subscriber
 | MySQL | MongoDB | Neo4j |
 -----------------------------------
    ↓
-Analytics Engine
+Analytics Engine / Dashboard
 ```
 
 ---
@@ -71,6 +78,7 @@ Used for:
 * Readings
 * Alerts
 * Sensor metadata
+* Pipeline performance metrics
 * Analytics queries
 
 ## MongoDB
@@ -89,6 +97,8 @@ Used for:
 * Sensor-location mapping
 * Metric relationships
 * Room connectivity visualization
+
+The subscriber keeps the graph in sync automatically: every incoming event MERGEs the corresponding Sensor/Location/Metric nodes, and a small set of known room adjacencies is seeded on startup. No manual step is required for the dashboard's "Sensor network" / "Room network" views to populate.
 
 ---
 
@@ -113,20 +123,34 @@ environment-monitoring-system/
 │
 ├── analytics/
 ├── config/
+├── dashboard/
 ├── database/
 ├── logs/
 ├── publisher/
 ├── subscriber/
 ├── tests/
+├── .github/workflows/      # CI pipeline
 │
-├
+├── docker-compose.yml
+├── pytest.ini
 ├── requirements.txt
+├── requirements-dev.txt
 ├── README.md
 ```
 
 ---
 
 # How To Run
+
+## Option A: Docker Compose (recommended)
+
+```bash
+docker compose up --build
+```
+
+This starts Mosquitto, MySQL, MongoDB, Neo4j, the subscriber, a publisher (simulated sensors), and the dashboard at `http://localhost:8501`. Tables and sample sensors/locations are seeded automatically on first start.
+
+## Option B: Run Manually
 
 ## 1. Install Dependencies
 
@@ -160,6 +184,25 @@ python analytics/analytics_menu.py
 
 ---
 
+# Testing
+
+The project ships with an automated pytest suite covering sensor value generation/bounds, MQTT publish/subscribe handling, alert-threshold logic (including sensor-type normalization), and the MySQL/MongoDB/Neo4j handlers. All database and broker clients are mocked, so the suite runs without any live infrastructure.
+
+```bash
+pip install -r requirements-dev.txt
+pytest -v
+```
+
+A GitHub Actions workflow (`.github/workflows/ci.yml`) runs this suite automatically on every push and pull request, across Python 3.11 and 3.12.
+
+---
+
+# Configuration & Security
+
+Copy `.env.example` to `.env` (and `config/.env.example` to `config/.env` if running manually) and fill in real values. `.env` files are excluded from version control via `.gitignore` -- never commit real credentials.
+
+---
+
 # Example MQTT Topics
 
 ```text
@@ -188,16 +231,15 @@ building/office_1/air_quality
 
 # Future Improvements
 
-* Web dashboard
-* Docker deployment
 * Machine learning anomaly detection
 * Cloud integration
 * Real sensor hardware support
+* Per-service Dockerfiles (instead of installing dependencies on every container start)
 
 ---
 
 # Author
 
-Eyasu Belete Abebe 
+Eyasu Belete Abebe
 
 Real-Time Environmental Monitoring System

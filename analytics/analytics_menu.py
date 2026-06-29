@@ -46,6 +46,9 @@ while True:
 
     elif choice == "8":
         print("Exiting Analytics System")
+        mysql_analytics.close()
+        mongodb_analytics.close()
+        neo4j_analytics.close()
         break
 
     else:
